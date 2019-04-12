@@ -11,8 +11,8 @@ class Question:
         self.choices = choices
         self.allow_text = allow_text
 
-    # def __repr__(self):
-    #     return self.question
+    def __repr__(self):
+        return self.question
 
     
 
@@ -20,15 +20,16 @@ class Question:
 class Survey:
     """Questionnaire."""
 
-    def __init__(self, title, instructions, questions):
+    def __init__(self, title, instructions, questions, code):
         """Create questionnaire."""
 
         self.title = title
         self.instructions = instructions
         self.questions = questions
+        self.code = code
 
-    # def __repr__():
-    #     return [self.title, self.instructions, self.questions]
+    def __repr__():
+        return self.questions
 
 
 satisfaction_survey = Survey(
@@ -40,7 +41,9 @@ satisfaction_survey = Survey(
         Question("On average, how much do you spend a month on frisbees?",
                  ["Less than $10,000", "$10,000 or more"]),
         Question("Are you likely to shop here again?"),
-    ])
+    ],
+    'satisfaction'
+    )
 
 personality_quiz = Survey(
     "Rithm Personality Test",
@@ -53,10 +56,16 @@ personality_quiz = Survey(
         Question("Which is the worst function name, and why?",
                  ["do_stuff()", "run_me()", "wtf()"],
                  allow_text=True),
-    ]
+    ],
+    'personality'
 )
+
+# know_yourself = Survey(
+#     "Welcome to the new you"
+# )
 
 surveys = {
     "satisfaction": satisfaction_survey,
     "personality": personality_quiz,
+    # "super_introspective": know_yourself
 }

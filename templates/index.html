@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 {% block title %} {{ title }} {% endblock %}
 {% block content %} {{ instructions }}
-<form action="/session" method="POST"> 
-
+<form action="/session" method="POST" name="survey">
+    <select name="survey_choice">
+    {% for survey in surveys.keys() %}
+     <option value= {{ survey }}>{{ survey }}</option>
+    {% endfor %}
+    </select>   
     <button type="submit">Start</button>
 </form>
 
