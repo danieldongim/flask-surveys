@@ -64,8 +64,3 @@ def answer():
 def endpage():
     '''our end-page'''
     return render_template("answer.html")
-
-
-
-#When you finish survey and go back to index to start survey, the responses are not set back to empty
-#When you finish survey and refresh and go back to index, responses refreshes
